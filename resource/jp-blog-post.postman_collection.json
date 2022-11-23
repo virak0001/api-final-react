@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "3567c20e-8792-489d-8175-5d80df77c186",
+		"name": "jp-blog-post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16526935"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"example@gmail.com\",\r\n    \"password\": \"virak@12Aa*\",\r\n    \"username\": \"Virak Ran\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{jp-blog-post}}auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"virak@12Aa*\",\r\n    \"username\": \"Virak Ran\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{jp-blog-post}}auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5MzViYWYzLTQxOWMtNDRlZC1hY2NlLTYxODY2MTdjZDljNCIsImNyZWF0ZWRBdCI6IjIwMjItMTAtMjlUMDQ6Mjk6NTIuODYxWiIsInVwZGF0ZWRBdCI6IjIwMjItMTAtMjlUMDQ6Mjk6NTIuODYxWiIsImRlbGV0ZWRBdCI6bnVsbCwidXNlcm5hbWUiOiJWaXJhayBSYW4iLCJlbWFpbCI6ImV4YW1wbGVAZ21haWwuY29tIiwiaWF0IjoxNjY3MTEyMDY4LCJleHAiOjE2NjcxOTg0Njh9.x9OCjP_VMu28920E8KuZu5kw6j2bqhuJMzpLoFlwAW0"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"9f5669f6-0779-4591-a3c0-2417c2b97bf2\",\r\n    \"title\": \"No I'm happy\",\r\n    \"content\": \"Why tody is sad day! Working day?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{jp-blog-post}}posts"
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk5MzViYWYzLTQxOWMtNDRlZC1hY2NlLTYxODY2MTdjZDljNCIsImNyZWF0ZWRBdCI6IjIwMjItMTAtMjlUMDQ6Mjk6NTIuODYxWiIsInVwZGF0ZWRBdCI6IjIwMjItMTAtMjlUMDQ6Mjk6NTIuODYxWiIsImRlbGV0ZWRBdCI6bnVsbCwidXNlcm5hbWUiOiJWaXJhayBSYW4iLCJlbWFpbCI6ImV4YW1wbGVAZ21haWwuY29tIiwiaWF0IjoxNjY3MTEyMDY4LCJleHAiOjE2NjcxOTg0Njh9.x9OCjP_VMu28920E8KuZu5kw6j2bqhuJMzpLoFlwAW0"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{jp-blog-post}}posts?id=9f5669f6-0779-4591-a3c0-2417c2b97bf2",
+							"host": [
+								"{{jp-blog-post}}posts"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "9f5669f6-0779-4591-a3c0-2417c2b97bf2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": ""
+					},
+					"response": []
+				},
+				{
+					"name": "gets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODMwN2Q2LWU3YzQtNGU0ZS04NWExLWJhNThmMzk2ODEyMSIsImNyZWF0ZWRBdCI6IjIwMjItMTEtMTNUMjM6Mzc6NTUuNDI3WiIsInVwZGF0ZWRBdCI6IjIwMjItMTEtMTNUMjM6Mzc6NTUuNDI3WiIsImRlbGV0ZWRBdCI6bnVsbCwidXNlcm5hbWUiOiJWaXJhayBSYW4iLCJlbWFpbCI6ImV4YW1wbGVAZ21haWwuY29tIiwiaWF0IjoxNjY4NDQwNjExLCJleHAiOjE2Njg1MjcwMTF9.bNdpo7QEIJyPBHs32ky07jKt8bhUG2hB8ByNcwxk8zo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{jp-blog-post}}posts"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODMwN2Q2LWU3YzQtNGU0ZS04NWExLWJhNThmMzk2ODEyMSIsImNyZWF0ZWRBdCI6IjIwMjItMTEtMTNUMjM6Mzc6NTUuNDI3WiIsInVwZGF0ZWRBdCI6IjIwMjItMTEtMTNUMjM6Mzc6NTUuNDI3WiIsImRlbGV0ZWRBdCI6bnVsbCwidXNlcm5hbWUiOiJWaXJhayBSYW4iLCJlbWFpbCI6ImV4YW1wbGVAZ21haWwuY29tIiwiaWF0IjoxNjY4NDQwNjExLCJleHAiOjE2Njg1MjcwMTF9.bNdpo7QEIJyPBHs32ky07jKt8bhUG2hB8ByNcwxk8zo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Unique activities with local experts.\",\r\n    \"type\": \"horizontal\",\r\n    \"title\": \"Get more followers and grow.\",\r\n    \"image\": \"https://images.unsplash.com/photo-1542744173-8e7e53415bb0?fit=crop&w=450&q=80\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{jp-blog-post}}posts"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
